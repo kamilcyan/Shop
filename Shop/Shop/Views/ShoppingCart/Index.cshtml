@@ -12,7 +12,7 @@
             var recordToDelete = $(this).attr("data-id");
             if (recordToDelete != '') {
                 // Perform the ajax post
-                $.post("/ShoppingCart/RemoveFromCart", {"id": recordToDelete },
+                $.post("/ShoppingCart/RemoveFromCart", { "id": recordToDelete },
                     function (data) {
                         // Successful requests get here
                         // Update the page elements
@@ -33,7 +33,7 @@
     <em>Review</em> your cart:
 </h3>
 <p class="button">
-    @Html.ActionLink("Checkout>> ", "AddressAndPayment", "Checkout")
+    @Html.ActionLink("Zamów>> ", "AddressAndPayment", "Checkout")
 </p>
 <div id="update-message">
 </div>
@@ -66,8 +66,8 @@
             <td>
                 <a href="#" class="RemoveLink"
                    data-id="@item.RecordId">
-                    Remove
-                    from cart
+                    Usuń
+                    z wózka
                 </a>
             </td>
         </tr>

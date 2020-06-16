@@ -12,23 +12,13 @@
 @using (Html.BeginForm())
 {
 
-    <h2>Address And Payment</h2>
+    <h2>Adres i płatność</h2>
     <fieldset>
         <legend>Shipping Information</legend>
         @Html.EditorForModel()
     </fieldset>
     <fieldset>
         <legend>Payment</legend>
-        <p>
-            We're running a promotion: all Products have 50% discount
-            with the promo code: "50"
-        </p>
-        <div class="editor-label">
-            @Html.Label("Promo Code")
-        </div>
-        <div class="editor-field">
-            @Html.TextBox("PromoCode")
-        </div>
     </fieldset>
 
     <input type="submit" value="Submit Order" />

@@ -189,6 +189,14 @@
     <Compile Include="Migrations\202006112008226_ShopEntities1.Designer.cs">
       <DependentUpon>202006112008226_ShopEntities1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202006141248469_ShopEntities2.cs" />
+    <Compile Include="Migrations\202006141248469_ShopEntities2.Designer.cs">
+      <DependentUpon>202006141248469_ShopEntities2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202006141647013_ShopEntities3.cs" />
+    <Compile Include="Migrations\202006141647013_ShopEntities3.Designer.cs">
+      <DependentUpon>202006141647013_ShopEntities3.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Cart.cs" />
@@ -198,7 +206,6 @@
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Order.cs" />
     <Compile Include="Models\OrderDetail.cs" />
-    <Compile Include="Models\Producer.cs" />
     <Compile Include="Models\ShopEntities.cs" />
     <Compile Include="Models\ShoppingCart.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -211,6 +218,19 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Images\red-rose-4304139_960_720_kk.jpg" />
+    <Content Include="Content\Images\rose-1122893__340.jpg" />
+    <Content Include="Content\Images\rose-2900914_960_720_kk.jpg" />
+    <Content Include="Content\Images\rose-4065186_960_720.jpg" />
+    <Content Include="Content\Images\rose-4269422_960_720.jpg" />
+    <Content Include="Content\Images\rose-4269422_960_720_kk.jpg" />
+    <Content Include="Content\Images\cz.jpg" />
+    <Content Include="Content\Images\rose-4910737_960_720.jpg" />
+    <Content Include="Content\Images\roses-4717391_960_720.jpg" />
+    <Content Include="Content\Images\roses-970206_960_720.jpg" />
+    <Content Include="Content\Images\the-oregon-grape-berries-1807093__340.jpg" />
+    <Content Include="Content\Images\wall-614716_960_720.jpg" />
+    <Content Include="Content\Images\yellow-rose-196393_960_720.jpg" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -272,6 +292,9 @@
     <Content Include="Views\StoreManager\Index.cshtml" />
     <Content Include="Views\ShoppingCart\Index.cshtml" />
     <Content Include="Views\CheckOut\AddressAndPayment.cshtml" />
+    <Content Include="Views\CheckOut\Complete.cshtml" />
+    <Content Include="Views\ShoppingCart\CartSummary.cshtml" />
+    <Content Include="Views\Store\CategoryMenu.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -300,6 +323,12 @@
     <EmbeddedResource Include="Migrations\202006112008226_ShopEntities1.resx">
       <DependentUpon>202006112008226_ShopEntities1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202006141248469_ShopEntities2.resx">
+      <DependentUpon>202006141248469_ShopEntities2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202006141647013_ShopEntities3.resx">
+      <DependentUpon>202006141647013_ShopEntities3.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
@@ -327,6 +356,7 @@
           <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
         </WebProjectProperties>
       </FlavorProperties>
+      <UserProperties content_4bootstrap-theme_1css_1map__JsonSchema="https://json.schemastore.org/sarif-external-property-file-2.1.0-rtm.4.json" />
     </VisualStudio>
   </ProjectExtensions>
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

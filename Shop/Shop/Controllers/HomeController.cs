@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Shop.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,9 +9,17 @@ namespace Shop.Controllers
 {
     public class HomeController : Controller
     {
+        ShopEntities StoreDB = new ShopEntities();
+        private List<Item> GetTopSellingItems(int count)
+        {
+            return StoreDB.Items.OrderByDescending(i => i.OrderDetails.Count())
+                .Take(count)
+                .ToList();
+        }
         public ActionResult Index()
         {
-            return View();
+            var items = GetTopSellingItems(10);
+            return View(items);
         }
 
         public ActionResult About()

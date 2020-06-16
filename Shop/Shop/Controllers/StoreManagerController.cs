@@ -10,7 +10,7 @@ using Shop.Models;
 
 namespace Shop.Controllers
 {
-    [Authorize(Users = "Ali@gmail.com,Ahmed@gmail.com")]
+    [Authorize(Users = "kamil@kamil")]
     public class StoreManagerController : Controller
     {
         private ShopEntities db = new ShopEntities();
@@ -18,7 +18,7 @@ namespace Shop.Controllers
         // GET: StoreManager2
         public ActionResult Index()
         {
-            var items = db.Items.Include(i => i.Category).Include(i => i.Producer);
+            var items = db.Items.Include(i => i.Category)/*.Include(i => i.Producer)*/;
             return View(items.ToList());
         }
 
@@ -41,7 +41,6 @@ namespace Shop.Controllers
         public ActionResult Create()
         {
             ViewBag.CategoryId = new SelectList(db.Categories, "CategoryId", "Name");
-            ViewBag.ProducerId = new SelectList(db.Producers, "ProducerId", "Name");
             return View();
         }
 
@@ -50,7 +49,7 @@ namespace Shop.Controllers
         // Aby uzyskać więcej szczegółów, zobacz https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ItemId,CategoryId,ProducerId,Title,Price,ItemArtUrl")] Item item)
+        public ActionResult Create([Bind(Include = "ItemId,CategoryId,/*ProducerId*/,Title,Price,ItemArtUrl")] Item item)
         {
             if (ModelState.IsValid)
             {
@@ -60,7 +59,6 @@ namespace Shop.Controllers
             }
 
             ViewBag.CategoryId = new SelectList(db.Categories, "CategoryId", "Name", item.CategoryId);
-            ViewBag.ProducerId = new SelectList(db.Producers, "ProducerId", "Name", item.ProducerId);
             return View(item);
         }
 
@@ -77,7 +75,6 @@ namespace Shop.Controllers
                 return HttpNotFound();
             }
             ViewBag.CategoryId = new SelectList(db.Categories, "CategoryId", "Name", item.CategoryId);
-            ViewBag.ProducerId = new SelectList(db.Producers, "ProducerId", "Name", item.ProducerId);
             return View(item);
         }
 
@@ -86,7 +83,7 @@ namespace Shop.Controllers
         // Aby uzyskać więcej szczegółów, zobacz https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ItemId,CategoryId,ProducerId,Title,Price,ItemArtUrl")] Item item)
+        public ActionResult Edit([Bind(Include = "ItemId,CategoryId,,Title,Price,ItemArtUrl")] Item item)
         {
             if (ModelState.IsValid)
             {
@@ -95,7 +92,6 @@ namespace Shop.Controllers
                 return RedirectToAction("Index");
             }
             ViewBag.CategoryId = new SelectList(db.Categories, "CategoryId", "Name", item.CategoryId);
-            ViewBag.ProducerId = new SelectList(db.Producers, "ProducerId", "Name", item.ProducerId);
             return View(item);
         }
 
